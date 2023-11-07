@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Игры</title>
+  <link rel="shortcut icon" href="https://www.ug-center.ru/upload/iblock/d3c/d3cc9e6c3303b364916a940888c4b4e1.jpg"/>
+</head>
+<body>
+  <style>
+        
+    body {
+        background-color:blanchedalmond;
+        background-repeat: repeat;
+        background-size: cover;
+      }
+      </style>
+  <table align="center" cellspacing="0" cellpadding="15" border="1" bgcolor=" #E5E3E4">
+    <tr>
+        <th><a href="/Users/macbookpeter/Desktop/Вшэ доки/Основы Web/КР.html" target="_self"><b>Главная</b></a> </th>
+      <th> <a href="/Users/macbookpeter/Desktop/Вшэ доки/Основы Web/Крmenu.html" target="_self"><b>Меню</b></a></th> 
+        <th><a href="/Users/macbookpeter/Desktop/Вшэ доки/Основы Web/КРигра.html" target="_self"><b>Игры</b></a></th>
+      <th> <a href="/Users/macbookpeter/Desktop/Вшэ доки/Основы Web/КРформа2.html" target="_self"><b>Сделать заказ</b></a> </th> 
+       <th> <a href="/Users/macbookpeter/Desktop/Вшэ доки/Основы Web/КРформа1.html" target="_self"><b>Обратная связь</b></a></th>
+       <th> <a href="/Users/macbookpeter/Desktop/Вшэ доки/Основы Web/КР О нас.html" target="_self"><b>О нас</b></a></th>
+       <th> <a href="/Users/macbookpeter/Desktop/Вшэ доки/Основы Web/КРпаспорт.html" target="_self"><b>Паспорт</b></a></th>
+</tr>  
+</table>
+  <div align="center" border="black">
+    <hr align="center" width="45%" size="20" color="blanchedalmond">
+    <hr align="center" width="45%" size="20" color="blanchedalmond">
+    <p align="center"> 1002. Дано вещественное число. Определить, какое это число: положительное, отрицательное, ноль.</p>
+  <h1>Определение типа числа</h1>
+  <input id="numberInput" type="number" placeholder="Введите число">
+  <button onclick="checkNumber()">Проверить</button>
+  <p id="result"></p>
+
+  <script>
+    function checkNumber() {
+      // Получение значения введенного числа
+      var number = document.getElementById("numberInput").value;
+
+      // Преобразование значения в число
+      number = parseFloat(number);
+
+      // Проверка типа числа и вывод результата
+      if (isNaN(number)) {
+        document.getElementById("result").innerHTML = "Введите корректное число";
+      } else if (number > 0) {
+        document.getElementById("result").innerHTML = "Положительное число";
+      } else if (number < 0) {
+        document.getElementById("result").innerHTML = "Отрицательное число";
+      } else {
+        document.getElementById("result").innerHTML = "Ноль";
+      }
+    }
+  </script>
+  </div>
+  <hr align="center" width="45%" size="20" color="blanchedalmond">
+  <hr align="center" width="45%" size="20" color="blanchedalmond">
+  <hr align="center" width="45%" size="20" color="blanchedalmond">
+  <div1> 
+    <h1 align="center">Угадай число</h1>
+
+ <div class="container" align="center"> 
+  
+  <p>Загадай число от 1 до 100:</p>
+  <input type="number" id="userNumber" placeholder="Введите число">
+  <button onclick="guessNumber()">Угадать</button>
+  <p id="result1"></p>
+  <button onclick="reset()">Начать заново</button>
+ </div>
+
+ <script>
+  let secretNumber = Math.floor(Math.random() * 100) + 1; // Генерация случайного числа от 1 до 100
+  let attempts = 0;
+
+  function guessNumber() {
+   const userNumber = parseInt(document.getElementById("userNumber").value);
+
+   if (isNaN(userNumber) || userNumber < 1 || userNumber > 100) {
+    document.getElementById("result1").innerHTML = "Пожалуйста, введите число от 1 до 100.";
+   } else if (userNumber === secretNumber) {
+    document.getElementById("result1").innerHTML = `Поздравляю, вы угадали число ${secretNumber}! Вы потратили ${attempts} попыток.`;
+    disableInputAndButton();
+   } else if (userNumber > secretNumber) {
+    document.getElementById("result1").innerHTML = "Загаданное число меньше.";
+   } else {
+    document.getElementById("result1").innerHTML = "Загаданное число больше.";
+   }
+
+   attempts++;
+  }
+
+  function reset() {
+   secretNumber = Math.floor(Math.random() * 100) + 1;
+   attempts = 0;
+   document.getElementById("userNumber").value = "";
+   document.getElementById("result1").innerHTML = "";
+   document.getElementById("userNumber").disabled = false;
+   document.querySelector("button").disabled = false;
+  }
+
+  function disableInputAndButton() {
+   document.getElementById("userNumber").disabled = true;
+   document.querySelector("button").disabled = true;
+  }
+ </script>
+  </div1>
+</body>
+</html>

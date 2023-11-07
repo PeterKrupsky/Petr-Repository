@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма 1</title>
+</head>
+<body>
+    <style>
+        body {
+          background-image: url('/Users/macbookpeter/Desktop/Вшэ доки/Основы Web/london.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        {
+            background: url(images/redline.png);
+   } 
+   td {
+    background: rgb(181, 175, 150); 
+    border: 1px solid #4b3c00; 
+    padding: 5px; 
+    opacity: 1; 
+    filter: alpha(Opacity=100); 
+   }
+   .trans {
+    opacity: 0; 
+    filter: alpha(Opacity=100); 
+   }
+      </style>
+
+<table align="center" border=1 cellpadding="5" cellspacing="1" width="600px">
+<p align="left">
+            <ol>    
+                <li><a href="/Users/macbookpeter/Desktop/Вшэ доки/Основы Web/форма1.html" target="_self"><b>Форма 1</b></a></li>  
+                <li><a href="/Users/macbookpeter/Desktop/Вшэ доки/Основы Web/форма2.html" target="_self"><b>Форма 2</b></a></li>
+            </ol>
+        </p>
+    <tr>
+        <td>Таблица с персональными данными</td>
+    </tr>
+
+            
+       
+    <tr>
+        <td>
+            <h3 align="center">Форма 1</h3>
+            <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+                <p>Для поисковика:<input name="q" type="Text" value="поиск"></p>
+                <p>Фамилия: <input name="last_name" size=20 type="Text" value="Крупский"></p>
+                <p>Возраст: <input name="age" size=20 type="Number" value="18"></p>
+                <p>Место проживания:
+                    <input name="place" type="Radio" value="Moscow">Лондон
+                    <input checked name="place" type="Radio" value="Nizhny">Москва
+                </p>
+
+                <p>Профессии, которых вы касались:
+                    <input checked name="experience" type="Checkbox" value="10">Монтажер 
+                    <input checked name="experience" type="Checkbox" value="20">Логист 
+                    <input checked name="experience" type="Checkbox" value="30">Менеджер 
+                </p>
+
+                <p>Уровень английского
+                    <select name="languages">
+                        <OPTION value="Владею свободно">С1</OPTION>
+                        <OPTION value="Читаю и перевожу со словарем">B2</OPTION>
+                    </select>
+                </p>
+                <p> Напишите свои лучшие качества:
+                    <br>
+                    <TEXTAREA cols=80 name="textarea" rows=4></TEXTAREA>
+                </p>
+                <p>Дата: <input name="user_date" type="date" value='2023-19-10'></p>
+                <p>Пароль: <input name="password" size=9 type="Password" value="123456"></p>
+                <p>Название файла: <input name="000_file_name" size='30' type="Техт" value="NazvanieFaila.docx">
+                </p>
+                <p> Тип записи в файл:<select name="010_mode">
+                    <OPTION value="a"> дополнить файл</OPTION>
+                    <OPTION value="w"> записать в новый файл</OPTION>
+                </select></p>
+                <input name="function" type="hidden" value="page">
+                <input name="page_id" type="hidden" value="3">
+                <p>
+                    <input name="Reset" type="Reset" value="Обновить">
+                    <input name="submit" type="Submit" value="Отправить">
+                </p>
+            </form>
+        </td>
+</table>
+</body>
+</html>

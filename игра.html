@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Угадай число</title>
+ <style>
+  h1 {
+   text-align: center;
+  }
+
+  .container {
+   width: 300px;
+   margin: 0 auto;
+   text-align: center;
+   padding: 20px;
+  }
+ </style>
+</head>
+<body>
+ <h1>Угадай число</h1>
+
+ <div class="container">
+  <p>Загадай число от 1 до 100:</p>
+  <input type="number" id="userNumber">
+  <button onclick="guessNumber()">Угадать</button>
+  <p id="result"></p>
+  <button onclick="reset()">Начать заново</button>
+ </div>
+
+ <script>
+  let secretNumber = Math.floor(Math.random() * 100) + 1; // Генерация случайного числа от 1 до 100
+  let attempts = 0;
+
+  function guessNumber() {
+   const userNumber = parseInt(document.getElementById("userNumber").value);
+
+   if (isNaN(userNumber) || userNumber < 1 || userNumber > 100) {
+    document.getElementById("result").innerHTML = "Пожалуйста, введите число от 1 до 100.";
+   } else if (userNumber === secretNumber) {
+    document.getElementById("result").innerHTML = `Поздравляю, вы угадали число ${secretNumber}! Вы потратили ${attempts} попыток.`;
+    disableInputAndButton();
+   } else if (userNumber > secretNumber) {
+    document.getElementById("result").innerHTML = "Загаданное число меньше.";
+   } else {
+    document.getElementById("result").innerHTML = "Загаданное число больше.";
+   }
+
+   attempts++;
+  }
+
+  function reset() {
+   secretNumber = Math.floor(Math.random() * 100) + 1;
+   attempts = 0;
+   document.getElementById("userNumber").value = "";
+   document.getElementById("result").innerHTML = "";
+   document.getElementById("userNumber").disabled = false;
+   document.querySelector("button").disabled = false;
+  }
+
+  function disableInputAndButton() {
+   document.getElementById("userNumber").disabled = true;
+   document.querySelector("button").disabled = true;
+  }
+ </script>
+</body>
+</html>
